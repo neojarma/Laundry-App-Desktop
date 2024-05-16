@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30dac2e7-1a73-496c-9c74-68bbec6da169">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="164"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tab_pesanan]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_pesanan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_customer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_hp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="services" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="berat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aktual_berat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ongkir" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diskon" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_bayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_bayar_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_bayar}]]></variableExpression>
+	</variable>
+	<variable name="total_bayar_2" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_bayar}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<image>
+				<reportElement uuid="e99ae0ec-c028-4dd9-becf-aa0f41f2b9c4" x="0" y="-1" width="555" height="108"/>
+				<imageExpression><![CDATA["E:\\2. Programming\\Java\\Uas_Laundry\\src\\Foto\\OL1V3D012.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3d259f5f-9909-46a5-99ee-04859c1712b0" x="37" y="25" width="225" height="40" forecolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="32" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NeoJ Laundry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="26040156-b480-4eea-8c8e-9980436d5771" x="173" y="65" width="89" height="28" forecolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Jl. XYZ no 999]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<textField>
+				<reportElement uuid="463536c9-637b-4236-8b33-8719eb4923b0" x="48" y="42" width="214" height="24" forecolor="#990099"/>
+				<textElement>
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="ed698463-9e32-44df-928d-3e293a17fd58" mode="Opaque" x="1" y="42" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="e6080cd4-bfc1-46ec-ac65-4ea86f9da70a" x="194" y="0" width="211" height="42" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN HARIAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="0" y="0" width="37" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="37" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[ID Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="132" y="0" width="53" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Cust ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="303" y="0" width="102" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Services]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="405" y="0" width="33" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Berat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="438" y="0" width="117" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="185" y="0" width="118" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="9f98be24-6ef8-4e7f-b247-2faec37ba88a" x="0" y="0" width="37" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7a7a7643-5585-4b00-976c-988a790fadac" x="37" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_pesanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aad331cb-3e0d-4138-abcd-25a033ab1625" x="132" y="0" width="53" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kode_customer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5828005c-552c-4831-a6e1-d4730e712550" x="185" y="0" width="118" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6fc130bd-3f9f-4819-a2c9-fc11db4c4a9c" x="303" y="0" width="102" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f69063ab-5022-4f5b-b292-54e478c53844" x="405" y="0" width="33" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{aktual_berat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="348312d5-0e63-4859-a494-4fa2cd02c3d4" x="438" y="0" width="117" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{total_bayar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="51" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9c3bc36f-7761-4641-b96f-3cc276771718" x="438" y="20" width="117" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Rp. " + $V{total_bayar_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0ef7c0df-fdb8-447f-8892-122da723e741" x="385" y="20" width="53" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
